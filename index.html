@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sulav Regmi — Business Analytics, Data Science, Machine Learning and AI portfolio.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Sulav Regmi | Analytics, Data Science & AI</title>
+  <style>
+    :root {
+      --bg: #0b1220; --panel: #111c2e; --panel2: #142238; --text: #edf3fb;
+      --muted: #a7b5c9; --line: rgba(190,210,235,.15); --accent: #65d6c5;
+      --accent2: #8bb8ff; --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 80% 0%, rgba(64,132,180,.17), transparent 38%),
+        radial-gradient(ellipse at 0% 30%, rgba(55,178,157,.10), transparent 34%), var(--bg);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: auto; }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:24px 0; }
+    .brand { font-weight:800; letter-spacing:.02em; font-size:1.05rem; }
+    .brand span { color:var(--accent); }
+    .navlinks { display:flex; gap:24px; color:var(--muted); font-size:.92rem; }
+    .hero { padding:90px 0 76px; display:grid; grid-template-columns:1.45fr .75fr; gap:55px; align-items:center; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; font-weight:800; }
+    h1 { font-size:clamp(2.7rem, 6vw, 5.2rem); line-height:1.04; letter-spacing:-.055em; margin:18px 0 20px; }
+    h1 span { color:var(--accent); }
+    .lead { color:#c2cede; max-width:690px; font-size:1.13rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:10px; font-weight:750; border:1px solid var(--line); }
+    .primary { background:var(--accent); color:#07151a; border-color:var(--accent); }
+    .primary:hover { color:#07151a; filter:brightness(1.07); }
+    .secondary { background:rgba(255,255,255,.035); }
+    .hero-card { border:1px solid var(--line); border-radius:22px; padding:26px; background:linear-gradient(145deg,rgba(22,39,61,.92),rgba(14,26,43,.86)); box-shadow:0 22px 70px rgba(0,0,0,.22); }
+    .monogram { width:66px; height:66px; display:grid; place-items:center; border-radius:18px; color:#06171a; font-weight:900; font-size:1.35rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+    .hero-card h2 { margin:20px 0 5px; font-size:1.25rem; }
+    .hero-card p { color:var(--muted); margin:0; }
+    .quickfacts { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:23px; }
+    .fact { border-top:1px solid var(--line); padding-top:12px; }
+    .fact strong { display:block; font-size:1.35rem; color:var(--accent); }
+    .fact small { color:var(--muted); }
+    section { padding:66px 0; }
+    .section-head { margin-bottom:28px; }
+    .section-head h2 { font-size:clamp(1.8rem,3vw,2.5rem); letter-spacing:-.035em; margin:7px 0; }
+    .section-head p { color:var(--muted); max-width:680px; margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:17px; }
+    .card { border:1px solid var(--line); border-radius:17px; padding:23px; background:rgba(17,28,46,.78); }
+    .card:hover { border-color:rgba(101,214,197,.45); transform:translateY(-2px); transition:.2s ease; }
+    .card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .number { color:var(--accent); font-size:.78rem; font-weight:800; letter-spacing:.1em; }
+    .status { color:#c2cede; border:1px solid var(--line); padding:4px 8px; border-radius:999px; font-size:.7rem; white-space:nowrap; }
+    .card h3 { margin:12px 0 7px; font-size:1.2rem; }
+    .card p { color:var(--muted); margin:0 0 16px; font-size:.95rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; }
+    .tag { font-size:.75rem; color:#c8d8e9; background:var(--panel2); border:1px solid var(--line); border-radius:7px; padding:4px 8px; }
+    .skills { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .skillgroup h3 { margin:0 0 12px; font-size:1rem; }
+    .skillgroup .tags { gap:8px; }
+    .experience { border-left:1px solid rgba(101,214,197,.5); padding-left:23px; margin-left:7px; }
+    .job { position:relative; padding:0 0 28px; }
+    .job:before { content:""; position:absolute; width:10px; height:10px; border-radius:50%; background:var(--accent); left:-29px; top:8px; box-shadow:0 0 0 5px var(--bg); }
+    .job h3 { margin:0; font-size:1.12rem; }
+    .meta { color:var(--accent2); font-size:.87rem; margin:3px 0 9px; }
+    .job ul { margin:0; padding-left:19px; color:var(--muted); }
+    .job li { margin:5px 0; }
+    .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+    .award { color:var(--muted); margin:0; }
+    .contact { border:1px solid var(--line); border-radius:20px; padding:32px; background:linear-gradient(120deg,rgba(20,43,59,.9),rgba(17,28,46,.9)); display:flex; justify-content:space-between; align-items:center; gap:24px; }
+    .contact h2 { margin:0 0 7px; font-size:1.8rem; }
+    .contact p { margin:0; color:var(--muted); }
+    footer { padding:28px 0 40px; color:var(--muted); font-size:.84rem; display:flex; justify-content:space-between; gap:15px; border-top:1px solid var(--line); }
+    .social { display:flex; gap:18px; flex-wrap:wrap; }
+    @media(max-width:780px) {
+      .hero { grid-template-columns:1fr; padding:60px 0 45px; gap:30px; }
+      .hero-card { max-width:500px; }
+      .grid,.skills,.edu-grid { grid-template-columns:1fr; }
+      .navlinks { gap:12px; font-size:.82rem; }
+      .contact { align-items:flex-start; flex-direction:column; }
+    }
+    @media(max-width:480px) {
+      .wrap { width:min(var(--max),calc(100% - 30px)); }
+      .navlinks a:nth-child(2),.navlinks a:nth-child(3) { display:none; }
+      section { padding:48px 0; }
+      footer { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#home">SULAV<span>.</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Business Analytics · Data Science · AI</div>
+        <h1>Turning data into <span>decisions.</span></h1>
+        <p class="lead">I'm Sulav Regmi, a Business Analytics and Data Science professional with experience in healthcare analytics, data engineering, machine learning, and AI-driven solutions. I build analytical workflows and practical applications that help turn complex data into useful insights.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore projects <span aria-hidden="true">&nbsp;↗</span></a>
+          <a class="btn secondary" href="Sulav_Regmi_Data_Resume.pdf" target="_blank" rel="noopener">View resume ↗</a>
+          <a class="btn secondary" href="mailto:sulav.regmi44@gmail.com">Contact me</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="monogram" aria-label="SR initials">SR</div>
+        <h2>Sulav Regmi</h2>
+        <p>Denton, Texas · United States</p>
+        <div class="quickfacts">
+          <div class="fact"><strong>2+ years</strong><small>Professional experience</small></div>
+          <div class="fact"><strong>2026</strong><small>SAS Curiosity Cup top performer</small></div>
+          <div class="fact"><strong>50%</strong><small>Workflow effort reduction</small></div>
+          <div class="fact"><strong>101K+</strong><small>Records in hospital LOS project</small></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="wrap" id="about">
+      <div class="section-head">
+        <div class="eyebrow">A little about me</div>
+        <h2>Analytics with an engineering mindset.</h2>
+        <p>I bring together analytical thinking and software engineering to work across the data lifecycle—from data preparation and validation to predictive modeling, automation, and communicating results. My experience includes healthcare quality measurement and graduate-level analytics education.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="number">01 / ANALYZE</div><h3>Understand the problem</h3>
+          <p>Work with large datasets, identify data-quality issues, and translate analytical questions into measurable outcomes.</p>
+        </article>
+        <article class="card">
+          <div class="number">02 / BUILD</div><h3>Develop practical solutions</h3>
+          <p>Create Python and SQL pipelines, predictive models, dashboards, and AI-powered workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="projects">
+      <div class="section-head">
+        <div class="eyebrow">Selected work</div>
+        <h2>Projects & applied research</h2>
+        <p>Project summaries below are based on my resume. Public repositories and live demos will be added as they become available.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-top"><span class="number">PROJECT 01</span><span class="status">Research project · Demo coming</span></div>
+          <h3>Frontline Forecast: Hospital Length-of-Stay Prediction</h3>
+          <p>Developed predictive models for hospital length-of-stay forecasting and bed-allocation optimization using more than 101,000 patient records across 130 hospitals. Explored regression, classification, and uncertainty estimation; achieved ROC-AUC of 0.837 and classification accuracy of 78.3%. Medication burden was identified as the strongest predictor of prolonged stays.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">SAS Viya Workbench</span><span class="tag">LightGBM</span><span class="tag">Neural Networks</span></div>
+          <p style="margin:15px 0 0;color:var(--accent);font-size:.84rem">Top-performing team · SAS Curiosity Cup 2026 · Invited presenter at SAS Innovate 2026</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="number">PROJECT 02</span><span class="status">ML application · Demo coming</span></div>
+          <h3>Manufactured Home Price Prediction</h3>
+          <p>Built an end-to-end machine learning pipeline using 66,000+ housing records spanning 2014–2024. Applied feature engineering, anomaly detection, and model optimization, achieving an R² of 0.806. Deployed a Streamlit application on Hugging Face Spaces for property valuation.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">LightGBM</span><span class="tag">Streamlit</span><span class="tag">Hugging Face</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="number">PROJECT 03</span><span class="status">AI system · Demo coming</span></div>
+          <h3>AI Tenant Maintenance Triage System</h3>
+          <p>Designed a multi-agent AI platform to support tenant maintenance requests through intelligent routing, vendor recommendations, escalation management, and human-approval workflows. Improved evaluation quality scores from 79% to 93% through iterative prompt engineering and model optimization.</p>
+          <div class="tags"><span class="tag">Vertex AI</span><span class="tag">Google Gemini</span><span class="tag">Google CX Agent Studio</span><span class="tag">Multi-agent systems</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="number">PROJECT 04</span><span class="status">AI automation · Demo coming</span></div>
+          <h3>Paw Connect AI: AI Receptionist for Small Businesses</h3>
+          <p>Built a voice-enabled AI receptionist designed to handle bookings, FAQs, and customer inquiries. Automated appointment collection and staff notifications, with a demonstrated cost reduction of over 90% compared with traditional receptionist staffing models.</p>
+          <div class="tags"><span class="tag">Dialogflow ES</span><span class="tag">Twilio</span><span class="tag">Google Apps Script</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="number">PROJECT 05</span><span class="status">ML web app · Demo coming</span></div>
+          <h3>Rice Quality Analysis Using Machine Learning</h3>
+          <p>Developed machine learning classification models for automated rice quality assessment in collaboration with a government-affiliated food management organization in Nepal. Deployed the best-performing model through a web application to support classification and reduce post-harvest waste.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Scikit-learn</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="skills">
+      <div class="section-head">
+        <div class="eyebrow">Technical toolkit</div><h2>Skills & technologies</h2>
+      </div>
+      <div class="skills">
+        <article class="card skillgroup"><h3>Programming & analytics</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">R</span><span class="tag">Pandas</span><span class="tag">NumPy</span></div></article>
+        <article class="card skillgroup"><h3>Machine learning</h3><div class="tags"><span class="tag">Scikit-learn</span><span class="tag">LightGBM</span><span class="tag">Regression</span><span class="tag">Classification</span><span class="tag">Neural Networks</span><span class="tag">Feature Engineering</span></div></article>
+        <article class="card skillgroup"><h3>AI & agentic systems</h3><div class="tags"><span class="tag">Google Gemini</span><span class="tag">Vertex AI</span><span class="tag">RAG</span><span class="tag">Multi-agent systems</span><span class="tag">CX Agent Studio</span></div></article>
+        <article class="card skillgroup"><h3>Data engineering</h3><div class="tags"><span class="tag">ETL</span><span class="tag">PySpark</span><span class="tag">MLflow</span><span class="tag">API integration</span><span class="tag">Data validation</span><span class="tag">Automation</span></div></article>
+        <article class="card skillgroup"><h3>Visualization & BI</h3><div class="tags"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">SAS Viya Workbench</span><span class="tag">Data storytelling</span></div></article>
+        <article class="card skillgroup"><h3>Databases & tools</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Google Cloud</span><span class="tag">Git</span><span class="tag">n8n</span><span class="tag">Apify</span></div></article>
+      </div>
+    </section>
+
+    <section class="wrap" id="experience">
+      <div class="section-head"><div class="eyebrow">Professional journey</div><h2>Experience</h2></div>
+      <div class="experience">
+        <article class="job">
+          <h3>Instructional Assistant · University of North Texas</h3><div class="meta">Denton, TX · Aug 2025 – May 2026</div>
+          <ul>
+            <li>Supported graduate-level Business Analytics coursework and course logistics for more than 200 students.</li>
+            <li>Mentored students in Python, predictive modeling, machine learning, and analytics project development.</li>
+            <li>Assisted faculty with grading, technical support, and evaluation of analytics assignments.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3>Software Engineer / Data Analyst · Cotiviti Nepal Pvt. Ltd.</h3><div class="meta">Kathmandu, Nepal · Jul 2022 – Aug 2024</div>
+          <ul>
+            <li>Integrated and analyzed millions of healthcare EHR and claims records for HEDIS quality measurement and reporting.</li>
+            <li>Built Python and SQL pipelines for cleaning, validation, standardization, and transformation of large datasets.</li>
+            <li>Reduced processing time and manual reporting effort by approximately 50% through workflow automation.</li>
+            <li>Produced analytical reports and dashboard outputs supporting quality reporting and compliance monitoring.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3>Software Engineering Intern · Smarten Technologies Pvt. Ltd.</h3><div class="meta">Kathmandu, Nepal · Apr 2022 – Jun 2022</div>
+          <ul>
+            <li>Contributed to Odoo enterprise applications using Python modules and PostgreSQL.</li>
+            <li>Supported web development, system testing, and documentation of test results.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="education">
+      <div class="section-head"><div class="eyebrow">Education & recognition</div><h2>Education and achievements</h2></div>
+      <div class="edu-grid">
+        <article class="card"><div class="number">MAY 2026</div><h3>M.S. in Business Analytics</h3><p>University of North Texas</p><p class="award">Coursework: AI for Business, Predictive Analytics, Data Mining, Data Visualization.</p></article>
+        <article class="card"><div class="number">JUL 2022</div><h3>Bachelor of Engineering, Computer Engineering</h3><p>Tribhuvan University</p></article>
+        <article class="card"><div class="number">RECOGNITION</div><h3>SAS Curiosity Cup 2026</h3><p class="award">Selected as a top-performing team for healthcare analytics research focused on predictive hospital operations and resource optimization.</p></article>
+        <article class="card"><div class="number">INVITED PRESENTER</div><h3>SAS Innovate 2026</h3><p class="award">Invited to present findings from the hospital length-of-stay prediction project.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="contact">
+        <div><div class="eyebrow">Let's connect</div><h2>Have an opportunity in mind?</h2><p>I'm interested in opportunities across business analytics, data analytics, data science, data engineering, and AI.</p></div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:sulav.regmi44@gmail.com">Email me ↗</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/sulavregmi44/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn secondary" href="https://github.com/sulavregmi" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <span>© <span id="year">2026</span> Sulav Regmi. Built as a personal portfolio.</span>
+    <div class="social"><a href="mailto:sulav.regmi44@gmail.com">Email</a><a href="https://www.linkedin.com/in/sulavregmi44/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/sulavregmi" target="_blank" rel="noopener">GitHub</a></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
